@@ -13,7 +13,7 @@ class LiveVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
-        self.title = "直播"
+//        self.title = "直播"
     }
     
     override func  didReceiveMemoryWarning() {
