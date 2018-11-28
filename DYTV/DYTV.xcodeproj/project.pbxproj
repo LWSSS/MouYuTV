@@ -25,6 +25,8 @@
 		019A52B721AD3ADC0040402E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52B621AD3ADC0040402E /* Common.swift */; };
 		019A52B921AD7B320040402E /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52B821AD7B320040402E /* PageContentView.swift */; };
 		019A52BB21AD7D810040402E /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52BA21AD7D810040402E /* UIColor_Extension.swift */; };
+		019A52BD21AE7FB40040402E /* CommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52BC21AE7FB40040402E /* CommandViewController.swift */; };
+		019A52C321AE8FDA0040402E /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52C221AE8FDA0040402E /* CollectionHeaderView.swift */; };
 		CCC88773F2BF833EF03148A4 /* libPods-DYTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F8C93C9E99AFC1813FF1EF /* libPods-DYTV.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		019A52B621AD3ADC0040402E /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		019A52B821AD7B320040402E /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		019A52BA21AD7D810040402E /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
+		019A52BC21AE7FB40040402E /* CommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewController.swift; sourceTree = "<group>"; };
+		019A52C221AE8FDA0040402E /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		8DBF025AAD9EEAACDA8BFAF0 /* Pods-DYTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV/Pods-DYTV.debug.xcconfig"; sourceTree = "<group>"; };
 		A6F8C93C9E99AFC1813FF1EF /* libPods-DYTV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYTV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0872D4644F17E02CD3279F /* Pods-DYTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV/Pods-DYTV.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 		019A52AE21AD29750040402E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				019A52C221AE8FDA0040402E /* CollectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				019A529E21ACEF160040402E /* HomeVC.swift */,
+				019A52BC21AE7FB40040402E /* CommandViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -446,7 +452,9 @@
 				019A526F21ACEE640040402E /* ViewController.swift in Sources */,
 				019A52B521AD39720040402E /* PageTitleView.swift in Sources */,
 				019A529F21ACEF160040402E /* HomeVC.swift in Sources */,
+				019A52BD21AE7FB40040402E /* CommandViewController.swift in Sources */,
 				019A52B721AD3ADC0040402E /* Common.swift in Sources */,
+				019A52C321AE8FDA0040402E /* CollectionHeaderView.swift in Sources */,
 				019A529B21ACEE7F0040402E /* MyTabBarVC.swift in Sources */,
 				019A52BB21AD7D810040402E /* UIColor_Extension.swift in Sources */,
 				019A529D21ACEE8C0040402E /* MyNavigationVC.swift in Sources */,

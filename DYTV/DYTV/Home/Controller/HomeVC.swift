@@ -14,28 +14,31 @@ private let kTitleViewH : CGFloat = 40
 
 class HomeVC: UIViewController {
     //懒加载PageTitleView
-    private lazy var pageTitleView : PageTitleView = {
+    private lazy var pageTitleView : PageTitleView = {[weak self] in
         let titleFrame  = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + 30, width: kScreenW, height: kTitleViewH)
-        let titles = ["直播", "游戏", "娱乐", "趣玩"]
+        let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
 //        titleView.backgroundColor = UIColor.purple
         return titleView
     }()
     
     //懒加载pagecontentview
-    private lazy var pageContentView : PageContentView = {
+    private lazy var pageContentView : PageContentView = {[weak self] in
         //确定内容的frame
-        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - 30
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - 30 - kTabBarH
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH + 30, width: kScreenW, height: contentH)
         //确定内容的子控制器
         var childVCs = [UIViewController]()
-        for _ in 0..<4{
+        childVCs.append(CommandViewController())
+        for _ in 0..<3{
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVCs.append(vc)
         }
         
         let contentView = PageContentView(frame: contentFrame, childVCs: childVCs, parentVC: self)
+        contentView.delegate = self
         return contentView
     }()
     
@@ -102,3 +105,21 @@ extension HomeVC {
         navigationItem.rightBarButtonItems = [historyItem,searchItem,QRCodeItem]
     }
 }
+
+
+//遵守pagetitleviewdelegate
+extension HomeVC : PageTitleViewDelegate{
+    func pageTitleView(titleView: PageTitleView, selectIndex index: Int) {
+        print(index)
+        pageContentView.setCurrentIndex(currentIndex: index)
+    }
+}
+
+//遵守pagecontentviewdelegate
+extension HomeVC : PageContentViewDelegate{
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTiteWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+    
+}
+
