@@ -11,6 +11,7 @@ import UIKit
 class CollectionHeaderView: UICollectionReusableView {
     private var title : String = ""
     private var image : String = ""
+    private var titleText : String = ""
     
     private lazy var sepLine : UILabel = {
         let sepLine = UILabel()
@@ -18,23 +19,58 @@ class CollectionHeaderView: UICollectionReusableView {
         return sepLine
     }()
     
-    init(frame: CGRect, title : String, image : String) {
-        self.title = title
-        self.image = image
-        super.init(frame: frame)
-        setUpUI()
+    
+    private lazy var headImageView : UIImageView = {
+        let headImageView = UIImageView()
+//        headImageView.backgroundColor = UIColor.red
+        headImageView.frame = CGRect(x: 10, y: 10, width: 30, height: frame.size.height - 20)
+        headImageView.image = UIImage(named: image)
+        headImageView.contentMode = .scaleAspectFit
+        return headImageView
+    }()
+    
+    private lazy var titleTextLbl : UILabel = {
+        let titleTextLbl  = UILabel()
+        titleTextLbl.textColor = UIColor.gray
+        titleTextLbl.frame = CGRect(x: 45, y: 10, width: 50, height: frame.size.height - 20)
+        titleTextLbl.font = UIFont.systemFont(ofSize: 16)
+        titleTextLbl.text = titleText
+        return titleTextLbl
+    }()
+    
+    private lazy var titleBtn : UIButton = {
+       let titleBtn = UIButton()
+//        titleBtn.backgroundColor = UIColor.white
+        titleBtn.frame = CGRect(x: frame.size.width - 60, y: frame.size.height / 2 - 15, width: 50, height: 30)
+        titleBtn.setTitle(title, for: UIControl.State.normal)
+        titleBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        titleBtn.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+        titleBtn.addTarget(self, action: #selector(clickMore), for: .touchUpInside)
+        return titleBtn
+    }()
+
+    @objc private  func clickMore(){
+        NSLog("click more")
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
 }
+
+
 
 
 extension CollectionHeaderView{
     private func setUpUI(){
         addSubview(sepLine)
+        addSubview(headImageView)
+        addSubview(titleTextLbl)
+        addSubview(titleBtn)
+    }
+}
+
+extension CollectionHeaderView{
+    func setUpHeaderViewWithParamaters(title : String, image : String, titleText: String) {
+        self.title = title
+        self.image = image
+        self.titleText = titleText
+        setUpUI()
     }
 }

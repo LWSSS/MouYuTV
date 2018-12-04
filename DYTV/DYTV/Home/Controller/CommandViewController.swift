@@ -30,7 +30,7 @@ class CommandViewController: UIViewController {
 //        collectionView.backgroundColor = UIColor.blue
         collectionView.dataSource = self
          collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader , withReuseIdentifier: normalHeaderID)
+         collectionView.register(CollectionHeaderView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader , withReuseIdentifier: normalHeaderID)
         return collectionView
     }()
     override func viewDidLoad() {
@@ -76,10 +76,9 @@ extension CommandViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         //1.取出session headview
-        let headrView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: normalHeaderID, for: indexPath)
-        headrView.backgroundColor = UIColor.green
-        
-        
+        let headrView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: normalHeaderID, for: indexPath)as! CollectionHeaderView
+        headrView.backgroundColor = UIColor.white
+        headrView.setUpHeaderViewWithParamaters(title: "更多 >", image: "home_header_normal",titleText:"热门")
         return headrView
     }
 }
