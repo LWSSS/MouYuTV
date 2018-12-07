@@ -13,17 +13,18 @@ class CollectionHeaderView: UICollectionReusableView {
     private var image : String = ""
     private var titleText : String = ""
     
+    
     private lazy var sepLine : UILabel = {
         let sepLine = UILabel()
         sepLine.backgroundColor = UIColor.lightGray
+        sepLine.frame = CGRect(x: 0, y: 0, width: kScreenW, height: 15)
         return sepLine
     }()
-    
     
     private lazy var headImageView : UIImageView = {
         let headImageView = UIImageView()
 //        headImageView.backgroundColor = UIColor.red
-        headImageView.frame = CGRect(x: 10, y: 10, width: 30, height: frame.size.height - 20)
+        headImageView.frame = CGRect(x: 10, y: 15, width: 30, height: frame.size.height - 25)
         headImageView.image = UIImage(named: image)
         headImageView.contentMode = .scaleAspectFit
         return headImageView
@@ -32,8 +33,8 @@ class CollectionHeaderView: UICollectionReusableView {
     private lazy var titleTextLbl : UILabel = {
         let titleTextLbl  = UILabel()
         titleTextLbl.textColor = UIColor.gray
-        titleTextLbl.frame = CGRect(x: 45, y: 10, width: 50, height: frame.size.height - 20)
-        titleTextLbl.font = UIFont.systemFont(ofSize: 16)
+        titleTextLbl.frame = CGRect(x: 45, y: 15, width: 50, height: frame.size.height - 25)
+        titleTextLbl.font = UIFont.systemFont(ofSize: 14)
         titleTextLbl.text = titleText
         return titleTextLbl
     }()
@@ -63,6 +64,7 @@ extension CollectionHeaderView{
         addSubview(headImageView)
         addSubview(titleTextLbl)
         addSubview(titleBtn)
+        addSubview(sepLine)
     }
 }
 

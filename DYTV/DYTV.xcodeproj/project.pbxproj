@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0121393E21B531C90028054D /* CollectionViewNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0121393D21B531C90028054D /* CollectionViewNormalCell.swift */; };
+		0155D2BF21BA7A64004852FB /* CollectionViewPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155D2BE21BA7A64004852FB /* CollectionViewPrettyCell.swift */; };
 		019A526D21ACEE640040402E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A526C21ACEE640040402E /* AppDelegate.swift */; };
 		019A526F21ACEE640040402E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A526E21ACEE640040402E /* ViewController.swift */; };
 		019A527221ACEE640040402E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019A527021ACEE640040402E /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		0121393D21B531C90028054D /* CollectionViewNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewNormalCell.swift; sourceTree = "<group>"; };
+		0155D2BE21BA7A64004852FB /* CollectionViewPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrettyCell.swift; sourceTree = "<group>"; };
 		019A526921ACEE640040402E /* DYTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019A526C21ACEE640040402E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019A526E21ACEE640040402E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				019A52B821AD7B320040402E /* PageContentView.swift */,
 				019A52B621AD3ADC0040402E /* Common.swift */,
 				0121393D21B531C90028054D /* CollectionViewNormalCell.swift */,
+				0155D2BE21BA7A64004852FB /* CollectionViewPrettyCell.swift */,
 			);
 			path = gongyong;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				019A52B921AD7B320040402E /* PageContentView.swift in Sources */,
 				019A526D21ACEE640040402E /* AppDelegate.swift in Sources */,
 				019A52A321ACEF260040402E /* FollowVC.swift in Sources */,
+				0155D2BF21BA7A64004852FB /* CollectionViewPrettyCell.swift in Sources */,
 				019A52A521ACEF2E0040402E /* UserVC.swift in Sources */,
 				019A52B221AD2F340040402E /* UIBarButtonItem-Extension.swift in Sources */,
 			);

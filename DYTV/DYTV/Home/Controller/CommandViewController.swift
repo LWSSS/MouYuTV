@@ -15,9 +15,9 @@ private let normalCellID = "normalCellID"
 private let normalHeaderID = "normalHeaderID"
 private let headerH : CGFloat = 50
 
-class CommandViewController: UIViewController {
+class CommandViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     //系统回调函数
-    private lazy var collectionView : UICollectionView = {[unowned self] in
+    private lazy var maincollectionView : UICollectionView = {[unowned self] in
         //1.创建layout
         let layout  = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: itemW, height: itemH)
@@ -26,18 +26,20 @@ class CommandViewController: UIViewController {
         layout.headerReferenceSize = CGSize(width: kScreenW, height: headerH)
         layout.sectionInset = UIEdgeInsets(top: 0, left: itemMargin, bottom: 0, right: itemMargin)
         
-        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-//        collectionView.backgroundColor = UIColor.blue
-        collectionView.dataSource = self
-         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-         collectionView.register(CollectionHeaderView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader , withReuseIdentifier: normalHeaderID)
-        return collectionView
+        let maincollectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        
+        maincollectionView.register(CollectionViewNormalCell.self, forCellWithReuseIdentifier: normalCellID)
+        maincollectionView.register(CollectionHeaderView.self, forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader , withReuseIdentifier: normalHeaderID)
+        
+        maincollectionView.delegate = self
+        maincollectionView.dataSource = self
+        maincollectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        maincollectionView.backgroundColor = UIColor.white
+        return maincollectionView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: normalCellID)
         setUpUI()
        
        
@@ -50,13 +52,14 @@ class CommandViewController: UIViewController {
 //设置ui
 extension CommandViewController{
     private func setUpUI(){
-        view.addSubview(collectionView)
+        view.addSubview(maincollectionView)
+        view.backgroundColor = UIColor.white
     }
 }
 
 
 //uicollectionviewdatasource
-extension CommandViewController : UICollectionViewDataSource{
+extension CommandViewController {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 12
     }
@@ -69,8 +72,10 @@ extension CommandViewController : UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: normalCellID, for: indexPath)
-        cell.backgroundColor = UIColor.yellow
+        let cell : CollectionViewNormalCell = collectionView.dequeueReusableCell(withReuseIdentifier: normalCellID, for: indexPath) as! CollectionViewNormalCell
+
+        
+        cell.SetNormalCellWithParamaters(title: "have a test", name: "xianyu_666", onLineNumber: 999)
         return cell
     }
     
