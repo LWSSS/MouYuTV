@@ -29,6 +29,7 @@
 		019A52BB21AD7D810040402E /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52BA21AD7D810040402E /* UIColor_Extension.swift */; };
 		019A52BD21AE7FB40040402E /* CommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52BC21AE7FB40040402E /* CommandViewController.swift */; };
 		019A52C321AE8FDA0040402E /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A52C221AE8FDA0040402E /* CollectionHeaderView.swift */; };
+		01F1EFC521C910FD00B9EDF8 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1EFC421C910FD00B9EDF8 /* NetworkTool.swift */; };
 		CCC88773F2BF833EF03148A4 /* libPods-DYTV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F8C93C9E99AFC1813FF1EF /* libPods-DYTV.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		019A52BA21AD7D810040402E /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		019A52BC21AE7FB40040402E /* CommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewController.swift; sourceTree = "<group>"; };
 		019A52C221AE8FDA0040402E /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		01F1EFC421C910FD00B9EDF8 /* NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		8DBF025AAD9EEAACDA8BFAF0 /* Pods-DYTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV/Pods-DYTV.debug.xcconfig"; sourceTree = "<group>"; };
 		A6F8C93C9E99AFC1813FF1EF /* libPods-DYTV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYTV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0872D4644F17E02CD3279F /* Pods-DYTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV/Pods-DYTV.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				019A52B621AD3ADC0040402E /* Common.swift */,
 				0121393D21B531C90028054D /* CollectionViewNormalCell.swift */,
 				0155D2BE21BA7A64004852FB /* CollectionViewPrettyCell.swift */,
+				01F1EFC421C910FD00B9EDF8 /* NetworkTool.swift */,
 			);
 			path = gongyong;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				019A529B21ACEE7F0040402E /* MyTabBarVC.swift in Sources */,
 				019A52BB21AD7D810040402E /* UIColor_Extension.swift in Sources */,
 				0121393E21B531C90028054D /* CollectionViewNormalCell.swift in Sources */,
+				01F1EFC521C910FD00B9EDF8 /* NetworkTool.swift in Sources */,
 				019A529D21ACEE8C0040402E /* MyNavigationVC.swift in Sources */,
 				019A52B921AD7B320040402E /* PageContentView.swift in Sources */,
 				019A526D21ACEE640040402E /* AppDelegate.swift in Sources */,
