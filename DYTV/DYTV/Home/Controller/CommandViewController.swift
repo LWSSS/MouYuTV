@@ -14,6 +14,7 @@ private let headerH : CGFloat = 50
 
 class CommandViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     //系统回调函数
+    private lazy var recommandVM : RecommandViewModel = RecommandViewModel()
     private lazy var maincollectionView : UICollectionView = {[unowned self] in
         //1.创建layout
         let layout  = UICollectionViewFlowLayout()
@@ -40,10 +41,12 @@ class CommandViewController: UIViewController,UICollectionViewDataSource,UIColle
         view.backgroundColor = UIColor.cyan
         setUpUI()
        
-        NetworkTool.requestData(.GET, URLString:"https://httpbin.org/get" , parameters:  ["name" : "JSON"]) { (result) in
-            print(result)
-        }
+        loadData()
         
+//        NetworkTool.requestData(.GET, URLString:"https://httpbin.org/get" , parameters:  ["name" : "JSON"]) { (result) in
+//            print(result)
+//        }
+//        
        
         // Do any additional setup after loading the view.
     }
@@ -56,6 +59,13 @@ extension CommandViewController{
     private func setUpUI(){
         view.addSubview(maincollectionView)
         view.backgroundColor = UIColor.white
+    }
+}
+
+//请求数据
+extension CommandViewController{
+    private func loadData(){
+        recommandVM.requestData()
     }
 }
 
